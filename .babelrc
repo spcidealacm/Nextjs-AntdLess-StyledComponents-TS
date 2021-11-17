@@ -3,6 +3,15 @@
     "next/babel"
   ],
   "plugins": [
-    "styled-components"
+    [
+      "styled-components"
+    ],
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": true
+      }
+    ]
   ]
 }
