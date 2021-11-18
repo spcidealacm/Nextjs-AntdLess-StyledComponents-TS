@@ -1,12 +1,21 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import type { AppProps } from 'next/app'
-import 'antd/dist/antd.css'
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    -webkit-user-drag: none;
   }
 `
 const theme = {
