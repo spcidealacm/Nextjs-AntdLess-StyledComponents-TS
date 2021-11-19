@@ -10,15 +10,7 @@ export const colors = {
   ],
 }
 
-export interface Theme_Color_Type {
-  readonly name: string;
-  readonly background: string,
-  readonly border: string,
-  readonly fontcolor: string,
-  readonly theme_color: string[]
-}
-
-export const theme_light: Theme_Color_Type = {
+export const theme_light = {
   name: "light",
   background: colors.white,
   border: colors.light_grey,
@@ -26,12 +18,14 @@ export const theme_light: Theme_Color_Type = {
   theme_color: colors.theme_color
 }
 
+export type Theme_Color_Type = typeof theme_light
+
 export const theme_dark: Theme_Color_Type = {
   name: "dark",
   background: colors.black,
   border: colors.light_grey,
   fontcolor: colors.white,
-  theme_color: colors.theme_color
+  theme_color: colors.theme_color,
 }
 
 export const GlobalStyle = createGlobalStyle<{ theme: Theme_Color_Type }>`
