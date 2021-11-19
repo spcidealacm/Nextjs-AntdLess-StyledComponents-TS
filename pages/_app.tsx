@@ -7,11 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const [theme, setTheme] = useState(theme_light);
   const changeTheme = useCallback(() => {
-    if (theme.name === theme_light.name) {
-      setTheme(theme_dark)
-    } else {
-      setTheme(theme_light)
-    }
+    setTheme(theme.name === theme_light.name ? theme_dark : theme_light)
   }, [theme.name])
 
   return (
