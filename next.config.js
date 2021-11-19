@@ -4,7 +4,7 @@ const path = require('path')
 
 module.exports = withAntdLess({
   reactStrictMode: true,
-  lessVarsFilePath: "./styles/globals.less",
+  lessVarsFilePath: "./styles/antd.less",
   webpack(config) {
     return config;
   },

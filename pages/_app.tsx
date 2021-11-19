@@ -1,34 +1,23 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
+import { useState, useCallback } from 'react';
 import type { AppProps } from 'next/app'
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  }
-
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    user-select: none;
-    -webkit-user-drag: none;
-  }
-`
-const theme = {
-  colors: {
-    primary: '#0070f3',
-  },
-}
+import { GlobalStyle, theme_light, theme_dark } from 'styles/global'
 
 function MyApp({ Component, pageProps }: AppProps) {
+
+  const [theme, setTheme] = useState(theme_light);
+  const changeTheme = useCallback(() => {
+    if (theme.name === theme_light.name) {
+      setTheme(theme_dark)
+    } else {
+      setTheme(theme_light)
+    }
+  }, [theme.name])
+
   return (
     <>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={{ ...theme, changeTheme }}>
+        <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
