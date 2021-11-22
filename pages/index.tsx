@@ -3,10 +3,9 @@ import { ThemeContext } from 'styled-components'
 import { useContext, useState, useEffect } from 'react'
 import useSWR from 'swr'
 import { Tabs } from 'antd'
-
+import { fetcher } from 'utils'
 const { TabPane } = Tabs
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const Title = styled.h1`
   font-size: 50px;
