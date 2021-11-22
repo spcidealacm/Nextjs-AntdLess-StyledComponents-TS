@@ -1,9 +1,9 @@
-import ip from 'ip'
+import { address } from 'utils'
 import { createServer } from 'http'
 import { parse } from 'url'
 import next from 'next'
 
-const ip_address = ip.address();
+const ip_address = address()
 const port = parseInt(process.env.PORT || '3000', 10)
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
