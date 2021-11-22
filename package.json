@@ -2,11 +2,12 @@
   "name": "styled-test-ts",
   "private": true,
   "scripts": {
-    "dev": "nodemon",
+    "dev": "yarn && nodemon",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node dist/server.js",
     "lint": "next lint",
-    "server": "yarn build && yarn start"
+    "clear": "rm -rf .next dist",
+    "server": "yarn && yarn build && yarn start"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
