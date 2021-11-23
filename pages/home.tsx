@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import { Button } from 'antd'
+import { useEffect, useState, useCallback, useRef } from 'react'
+import { io } from 'socket.io-client'
+import { address, port } from 'utils'
 
 const MyButton = styled.button`
   padding: 10px;
@@ -17,6 +20,15 @@ const NewButton = styled(Button)`
 `
 
 const Home = () => {
+
+  useEffect((): any => {
+    const socket = io({path: '/api/socketio'})
+    socket.on('connect', ()=>{
+      console.log('SOCKET CONNECTED!', socket.id)
+    })
+    if(socket) return () => socket.disconnect()
+  }, [])
+
   return (
     <>
       <MyButton>MyButton</MyButton>

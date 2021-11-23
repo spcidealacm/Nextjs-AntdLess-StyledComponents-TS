@@ -13,7 +13,7 @@ export default function handler(
 ) {
   res.status(200).json({
     ip: {
-      address: address()
+      address: address
     }
   })
 }

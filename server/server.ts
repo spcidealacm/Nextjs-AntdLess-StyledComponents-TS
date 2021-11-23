@@ -1,10 +1,10 @@
-import { address } from 'utils'
+import { address, port as the_port } from 'utils'
 import { createServer } from 'http'
 import { parse } from 'url'
 import next from 'next'
 
-const ip_address = address()
-const port = parseInt(process.env.PORT || '3000', 10)
+const ip_address = address
+const port = the_port
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()

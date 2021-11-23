@@ -1,4 +1,4 @@
 import { fetcher } from './fetcher'
-import { address } from './ip'
+import { address, port } from './ip'
 
-export { fetcher, address }
+export { fetcher, address, port }
