@@ -7,14 +7,16 @@
     "start": "NODE_ENV=production node dist/server.js",
     "lint": "next lint",
     "clear": "rm -rf .next dist",
+    "database": "npx prisma studio",
     "server": "yarn && yarn build && yarn start"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@prisma/client": "^3.5.0",
     "@reduxjs/toolkit": "^1.6.2",
     "antd": "^4.16.13",
     "ip": "^1.1.5",
-    "lowdb": "^3.0.0",
+    "lodash": "^4.17.21",
     "next": "12.0.4",
     "next-plugin-antd-less": "^1.5.2",
     "react": "17.0.2",
@@ -26,6 +28,7 @@
   },
   "devDependencies": {
     "@types/ip": "^1.1.0",
+    "@types/lodash": "^4.14.177",
     "@types/node": "16.11.7",
     "@types/react": "17.0.35",
     "@types/react-redux": "^7.1.20",
@@ -35,6 +38,7 @@
     "eslint": "7",
     "eslint-config-next": "12.0.4",
     "nodemon": "^2.0.15",
+    "prisma": "^3.5.0",
     "ts-node": "^10.4.0",
     "typescript": "4.4.4"
   }
