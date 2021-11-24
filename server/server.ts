@@ -1,3 +1,5 @@
+// server.ts will generate to server.js. and node server cannot use tsconfig.json
+// that's why use '../utils' not 'utils'
 import { address, port as the_port } from '../utils'
 import { createServer } from 'http'
 import { parse } from 'url'
@@ -17,8 +19,7 @@ app.prepare().then(() => {
 
   // tslint:disable-next-line:no-console
   console.log(
-    `> Server listening at http://${ip_address}:${port} as ${
-      dev ? 'development' : process.env.NODE_ENV
+    `> Server listening at http://${ip_address}:${port} as ${dev ? 'development' : process.env.NODE_ENV
     }`
   )
 })
