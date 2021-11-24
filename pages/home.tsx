@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { Button } from 'antd'
 import { useEffect, useState, useCallback, useRef } from 'react'
 import { io } from 'socket.io-client'
-import { address, port } from 'utils'
 
 const MyButton = styled.button`
   padding: 10px;

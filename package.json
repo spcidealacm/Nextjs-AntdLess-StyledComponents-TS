@@ -3,12 +3,13 @@
   "private": true,
   "scripts": {
     "dev": "yarn && nodemon",
+    "tsc": "tsc --project tsconfig.server.json",
     "build": "next build && tsc --project tsconfig.server.json",
-    "start": "NODE_ENV=production node dist/server.js",
+    "start": "NODE_ENV=production node dist/server/server.js",
     "lint": "next lint",
     "clear": "rm -rf .next dist",
     "database": "npx prisma studio",
-    "server": "yarn && yarn build && yarn start"
+    "server": "yarn && yarn clear && yarn build && yarn start"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
