@@ -2,14 +2,14 @@
   "name": "styled-test-ts",
   "private": true,
   "scripts": {
-    "dev": "yarn && nodemon",
+    "dev": "yarn && yarn clear && clear && nodemon",
     "tsc": "tsc --project tsconfig.server.json",
-    "build": "next build && tsc --project tsconfig.server.json",
+    "build": "next build && yarn tsc",
     "start": "NODE_ENV=production node dist/server/server.js",
     "lint": "next lint",
     "clear": "rm -rf .next dist",
     "database": "npx prisma studio",
-    "server": "yarn && yarn clear && yarn build && yarn start"
+    "server": "yarn && yarn clear && yarn build && clear && yarn start"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
